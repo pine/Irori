@@ -1,13 +1,38 @@
 #!/bin/bash
 
-set -xe
+set -x
 
+export HOME=$OPENSHIFT_DATA_DIR
 export NODEBREW_ROOT=$OPENSHIFT_DATA_DIR/.nodebrew
 export PATH=$NODEBREW_ROOT/current/bin:$PATH
 
+export PORT=$OPENSHIFT_DIY_PORT
+export HOST=$OPENSHIFT_DIY_IP
+
+export DB_HOST=$OPENSHIFT_MONGODB_DB_HOST
+export DB_PORT=$OPENSHIFT_MONGODB_DB_PORT
+export DB_USER=$OPENSHIFT_MONGODB_DB_USERNAME
+export DB_PASS=$OPENSHIFT_MONGODB_DB_PASSWORD
+export DB_NAME=$OPENSHIFT_APP_NAME
+
+cd $OPENSHIFT_REPO_DIR
+
+mkdir -p $OPENSHIFT_DATA_DIR/node_modules
+ln -s $OPENSHIFT_DATA_DIR/node_modules ./node_modules
+
+rm -rf ./config
+ln -s $OPENSHIFT_DATA_DIR/config ./config
+
+npm config set cache $OPENSHIFT_DATA_DIR/.npm --global
+
 npm install --production
-npm install -g forever@0.15.1
+
+if !type -P forever >/dev/null 2>&1; then
+    npm install -g forever@0.15.1
+fi
+
+APP_LOG_FILE=$OPENSHIFT_LOG_DIR/app.log
 
 forever list
-forever start --uid irori -fa bin/www
+forever start --uid irori -a -l $APP_LOG_FILE bin/server
 forever list

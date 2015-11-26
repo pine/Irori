@@ -1,9 +1,12 @@
 #!/bin/bash
 
-set -xe
+set -x
 
+export HOME=$OPENSHIFT_DATA_DIR
 export NODEBREW_ROOT=$OPENSHIFT_DATA_DIR/.nodebrew
-export PATH=$NODEBREW_ROOT/current/bin:$PATH
+export PATH=$OPENSHIFT_DATA_DIR/.nodebrew/current/bin:$PATH
+
+cd $OPENSHIFT_REPO_DIR
 
 forever list
 forever stop irori || true

@@ -12,12 +12,20 @@ const router = require('../lib/router')
 const app = koa()
 
 app.name = pkg.name.toLowerCase()
-
 app.use(logger())
+
+const dbHost = process.env.DB_HOST || 'localhost'
+const dbPort = process.env.DB_PORT || 27017
+const dbUser = process.env.DB_USER || undefined
+const dbPass = process.env.DB_PASS || undefined
+const dbName = process.env.DB_NAME || app.name
+
 app.use(mongo({
-  host: 'localhost',
-  port: 27017,
-  db: app.name
+  host: dbHost,
+  port: dbPort,
+  user: dbUser,
+  pass: dbPass,
+  db: dbName
 }))
 
 app.use(bodyParser())
@@ -25,7 +33,9 @@ app.use(router.routes())
 app.use(router.allowedMethods())
 
 const port = process.env.PORT || 8080
-app.listen(port)
-console.log('Koa server start listening on port ' + port)
+const host = process.env.HOST || '0.0.0.0'
+
+app.listen(port, host)
+console.log('Koa server start listening on port ' + port + ':' + host)
 
 // vim: se et ts=2 sw=2 sts=2 ft=javascript :

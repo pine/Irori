@@ -1,5 +1,7 @@
 # Irori
 
+Irori - REST x RSS based notification system
+
 # Getting started
 
 ```

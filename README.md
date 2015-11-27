@@ -7,6 +7,7 @@ REST x RSS based notification system
 - Node.js v4.2.1
 - [koa](http://koajs.com/)
 - MongoDB
+- OpenShift
 
 ## Getting started
 

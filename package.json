@@ -2,7 +2,7 @@
   "name": "Irori",
   "version": "0.1.0",
   "description": "Irori - RSS based notification system",
-  "main": "bin/server.js",
+  "main": "bin/server",
   "scripts": {
     "test": "fly test"
   },

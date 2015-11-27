@@ -5,9 +5,10 @@ REST x RSS based notification system
 ## Dependencies
 
 - Node.js v4.2.1
-- [koa](http://koajs.com/)
 - MongoDB
 - OpenShift
+- [koa](http://koajs.com/)
+- [fly](https://github.com/bucaran/fly)
 
 ## Getting started
 

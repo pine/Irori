@@ -1,3 +1,9 @@
 machine:
   node:
     version: 4.2.1
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - git push ssh://56569b5089f5cf2ba90000b1@irori-pinemz.rhcloud.com/~/git/irori.git/ master

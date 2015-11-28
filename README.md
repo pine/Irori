@@ -9,7 +9,7 @@ REST x RSS based notification system
 
 - Node.js v4.2.1
 - MongoDB
-- OpenShift
+- [OpenShift](https://www.openshift.com/)
 - [koa](http://koajs.com/)
 - [fly](https://github.com/bucaran/fly)
 

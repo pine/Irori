@@ -36,6 +36,6 @@ const port = process.env.PORT || 8080
 const host = process.env.HOST || '0.0.0.0'
 
 app.listen(port, host)
-console.log('Koa server start listening on port ' + port + ':' + host)
+console.log('Koa server start listening on port ' + host + ':' + port)
 
 // vim: se et ts=2 sw=2 sts=2 ft=javascript :

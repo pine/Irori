@@ -1,7 +1,6 @@
 import test from 'ava'
 import mock from 'mock-require'
 
-
 test.beforeEach(t => {
   mock('../config/token.json', [
     {

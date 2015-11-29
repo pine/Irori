@@ -1,8 +1,8 @@
 import test from 'ava'
 import mock from 'mock-require'
-
-import api from '../lib/route/api'
-import feed from '../lib/route/feed'
+import co from 'co'
+import fs from 'co-fs-extra'
+import {join} from 'path'
 
 test.beforeEach(t => {
   const router = {
@@ -11,14 +11,31 @@ test.beforeEach(t => {
     post: (path, action) => router.routes.push(['post', path, action])
   }
 
-  mock('koa-router', () => router)
-  require('../lib/router')
-  t.context = router
+  const config = {
+    token: join(__dirname, '/../config/token.json'),
+    tokenExample: join(__dirname, '/../config/token.example.json'),
+    user: join(__dirname, '/../config/user.json'),
+    userExample: join(__dirname, '/../config/user.example.json')
+  }
 
-  t.end()
+  return co(function *() {
+    if (!(yield fs.exists(config.token))) {
+      yield fs.copy(config.tokenExample, config.token)
+    }
+
+    if (!(yield fs.exists(config.user))) {
+      yield fs.copy(config.userExample, config.user)
+    }
+
+    mock('koa-router', () => router)
+    require('../lib/router')
+    t.context = router
+  })
 })
 
 test('router', t => {
+  const api = require('../lib/route/api')
+  const feed = require('../lib/route/feed')
   const routes = t.context.routes
 
   t.is(routes[0][0], 'get')

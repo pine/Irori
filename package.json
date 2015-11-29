@@ -18,6 +18,8 @@
     "koa-router": "5.2.3"
   },
   "devDependencies": {
+    "co": "^4.6.0",
+    "co-fs-extra": "^1.1.0",
     "fly": "^0.8.3",
     "fly-ava": "^0.1.1",
     "fly-eslint": "^1.0.0",

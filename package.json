@@ -4,6 +4,7 @@
   "description": "Irori - RSS based notification system",
   "main": "bin/server",
   "scripts": {
+    "start": "bin/server",
     "test": "fly test"
   },
   "author": "Pine Mizune <pinemz@gmail.com> (https://github.com/pine613)",

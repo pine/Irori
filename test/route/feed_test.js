@@ -73,6 +73,7 @@ test.serial('index', function* (t) {
 
   t.ok(Feed.calledOnce)
   t.ok(Feed.calledWith({
+    id: 'userId',
     title: 'name',
     description: 'RSS for name',
     link: 'http://www.example.com'

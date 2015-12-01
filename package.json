@@ -25,5 +25,6 @@
     "fly-eslint": "^1.0.0",
     "mock-require": "^1.2.1",
     "sinon": "^1.17.2"
-  }
+  },
+  "homepage": "https://github.com/pine613/Irori"
 }

@@ -6,4 +6,5 @@ deployment:
   production:
     branch: master
     commands:
+      - git fetch --unshallow || true
       - git push ssh://56569b5089f5cf2ba90000b1@irori-pinemz.rhcloud.com/~/git/irori.git/ master

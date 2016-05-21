@@ -129,8 +129,8 @@
     },
     "feed": {
       "version": "0.2.6",
-      "from": "git+https://github.com/pine613/feed.git#1e80b3dd37ac66bc373629fe52c4439a5bc0b89f",
-      "resolved": "git+https://github.com/pine613/feed.git#1e80b3dd37ac66bc373629fe52c4439a5bc0b89f",
+      "from": "git+https://github.com/pine/feed.git#1e80b3dd37ac66bc373629fe52c4439a5bc0b89f",
+      "resolved": "git+https://github.com/pine/feed.git#1e80b3dd37ac66bc373629fe52c4439a5bc0b89f",
       "dependencies": {
         "xml": {
           "version": "1.0.0",

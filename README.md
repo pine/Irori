@@ -1,7 +1,7 @@
 # Irori
 [![Circle CI](https://img.shields.io/circleci/project/pine/Irori/master.svg?style=flat-square)](https://circleci.com/gh/pine/Irori)
 [![Dependency Status](https://img.shields.io/david/pine/Irori.svg?style=flat-square)](https://david-dm.org/pine/Irori)
-[![devDependency Status](https://img.shields.io/david/dev/pine/Irori.svg?style=flat-square)](https://david-dm.org/pine/Irori#info=devDependencies)
+[![devDependency Status](https://img.shields.io/david/dev/pine/Irori.svg?style=flat-square)](https://david-dm.org/pine/Irori#info=devDependencies) [![Greenkeeper badge](https://badges.greenkeeper.io/pine/Irori.svg)](https://greenkeeper.io/)
 
 REST x RSS based notification system
 
